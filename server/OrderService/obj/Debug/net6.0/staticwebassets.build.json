@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wX90EoSjKcZKtsI3RPSHtjOTz5H8rrEtChyywvmR5Qw=",
+  "Source": "SparkSwim.OrderService",
+  "BasePath": "_content/SparkSwim.OrderService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
