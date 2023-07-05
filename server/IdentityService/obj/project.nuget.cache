@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KcTnAyx2yiGqM5I9fbtd9F80BkEU02kcBytRAD2EpYb7F6w5nVilh+Vcie9Nj+si0sf+74KecLJ3xpq7ja3S1w==",
+  "dgSpecHash": "Corq9F29qRLLxCwwTlSek64XWQqTNHLX4KLh4WpJMdMvaDRs8RRo24zwRINjYYvRUsgcy+l5ZIJjf88lsYg4JQ==",
   "success": true,
-  "projectFilePath": "E:\\SparkSwim\\server\\IdentityService\\SparkSwim.IdentityService.csproj",
+  "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/IdentityService/SparkSwim.IdentityService.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
