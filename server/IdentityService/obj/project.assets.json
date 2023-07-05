@@ -8,24 +8,28 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/home/elainezirael/.nuget/packages/": {}
+    "C:\\Users\\Nimbus-2001\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/IdentityService/SparkSwim.IdentityService.csproj",
+      "projectUniqueName": "E:\\SparkSwim\\server\\IdentityService\\SparkSwim.IdentityService.csproj",
       "projectName": "SparkSwim.IdentityService",
-      "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/IdentityService/SparkSwim.IdentityService.csproj",
-      "packagesPath": "/home/elainezirael/.nuget/packages/",
-      "outputPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/IdentityService/obj/",
+      "projectPath": "E:\\SparkSwim\\server\\IdentityService\\SparkSwim.IdentityService.csproj",
+      "packagesPath": "C:\\Users\\Nimbus-2001\\.nuget\\packages\\",
+      "outputPath": "E:\\SparkSwim\\server\\IdentityService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/elainezirael/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Nimbus-2001\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "C:\\Users\\Nimbus-2001\\.nuget\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -62,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/6.0.411/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
