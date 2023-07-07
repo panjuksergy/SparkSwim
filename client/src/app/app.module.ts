@@ -1,18 +1,26 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {CommonModule} from "@angular/common";
+import {RouterModule} from "@angular/router";
+import {AppRoutingModule} from "./app-routing.module";
+import {ROUTES} from "./app.routes";
+import {FullLayoutComponent} from "./conteiners/full-layout/full-layout/full-layout.component";
+import {AppComponent} from "./app.component";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
+const layoutComponents = [
+  FullLayoutComponent
+];
+const appComponents = [
+  AppComponent
+]
 @NgModule({
   declarations: [
-    AppComponent
+    ...layoutComponents,
+    ...appComponents,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    CommonModule,
+    AppRoutingModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports: [RouterModule]
 })
-export class AppModule { }
+export class AppModule{}
