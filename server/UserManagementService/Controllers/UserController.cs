@@ -8,6 +8,7 @@ using SparkSwim.UserManagementService.Models;
 namespace SparkSwim.UserManagementService.Controllers
 {
     [Route("[controller]")]
+    [Authorize]
     public class UserController : BaseController
     {
         private UserManager<AppUser> _userManager;
@@ -18,8 +19,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("register")]
-        [AllowAnonymous]
-        public Task<IdentityResult> Register(UserRegisterDto registerUserModel)
+        public async Task<IdentityResult> Register(RegisterUserDto registerUserModel)
         {
             var appUser = new AppUser()
             {
@@ -28,8 +28,34 @@ namespace SparkSwim.UserManagementService.Controllers
                 FirstName = registerUserModel.FirstName,
                 LastName = registerUserModel.LastName
             };
-            var result = _userManager.CreateAsync(appUser, registerUserModel.Password);
+            var result = await _userManager.CreateAsync(appUser, registerUserModel.Password);
             return result;
+        }
+
+        [HttpPost("update-user")]
+        public async Task<IdentityResult> UpdateUser(UpdateUserDto updateUser)
+        {
+            var userToBeUpdated = await _userManager.FindByIdAsync(UserId.ToString());
+
+            userToBeUpdated.UserName = updateUser.UserName;
+            userToBeUpdated.Email = updateUser.Email;
+            userToBeUpdated.FirstName = updateUser.FirstName;
+            userToBeUpdated.LastName = updateUser.LastName;
+
+            var result = await _userManager.UpdateAsync(userToBeUpdated);
+            return result;
+        }
+
+        [HttpGet("health")]
+        public async Task<string> Helth()
+        {
+            return "Service is online!";
+        }
+
+        [HttpGet("info")]
+        public async Task<IActionResult> Info()
+        {
+            return Ok(UserId.ToString());
         }
     }
 }

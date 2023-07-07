@@ -2,7 +2,7 @@
 
 namespace SparkSwim.UserManagementService.Models
 {
-    public class UserRegisterDto
+    public class RegisterUserDto
     {
         [Required]
         [EmailAddress]
