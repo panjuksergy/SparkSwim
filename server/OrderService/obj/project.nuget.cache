@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YinLPOs3KQnuPwSINTSLv2P0mFp7ULLLwYMhgPoqncsd83UX4Nvb6yMmBFevVbxL7Xg5qjq6SUwxyqqY77zN6w==",
+  "dgSpecHash": "j/NZahv/RTZJ00aHDuVaM11xZfNmQbmPDcr8fp1j7DAzQG/NrYScqLb23AJIM+Msj7fy1Y0zl8QxQKTjy5vPIw==",
   "success": true,
-  "projectFilePath": "E:\\SparkSwim\\server\\OrderService\\SparkSwim.OrderService.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/OrderService/SparkSwim.OrderService.csproj",
+  "expectedPackageFiles": [
+    "/home/elainezirael/.nuget/packages/mediatr/12.1.0/mediatr.12.1.0.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
