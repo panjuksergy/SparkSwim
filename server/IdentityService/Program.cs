@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SparkSwim.Core.Data;
 using SparkSwim.Core.Models;
+using SparkSwim.IdentityService.Configuration;
+using SparkSwim.IdentityService.Interfaces;
+using SparkSwim.IdentityService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 RegisterServices(builder.Services);
@@ -23,6 +26,11 @@ void RegisterServices(IServiceCollection services)
     services.AddIdentity<AppUser, IdentityRole>()
         .AddEntityFrameworkStores<UsersDbContext>()
         .AddDefaultTokenProviders();
+
+    services.AddTransient<IJwtService, JwtService>();
+    services.AddTransient<IUserIdentityRepository, UserIdentityRepository>();
+
+    services.Configure<JwtConfiguration>(builder.Configuration.GetSection("JwtConfiguration"));
 }
 
 void Configure(IApplicationBuilder app)
