@@ -1,3 +1,7 @@
+*project.assets.json
+*project.nuget.cache
+*.csproj.nuget.dgspec.json
+*.csproj.nuget.g.props
 
 server/GoodsService/obj/project.assets.json
 
@@ -38,8 +42,6 @@ server/OrderService/obj/Debug/net6.0/SparkSwim.OrderService.assets.cache
 server/SparkSwim.Core/obj/project.assets.json
 
 server/SparkSwim.Core/obj/project.nuget.cache
-
-*.json
 
 server/SparkSwim.Core/obj/SparkSwim.Core.csproj.nuget.g.props
 

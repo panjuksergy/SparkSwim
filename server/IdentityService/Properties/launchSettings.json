@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "SparkSwim.IdentityService": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:64458;http://localhost:64462"
+    }
+  }
+}
