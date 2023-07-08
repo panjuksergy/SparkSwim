@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "ZGGy2C4L8AIl4zplyFR3qULPeUDTZPshhcPqmevAQjH+6+Z5TciFjcq8SdQcnQMVxpQtXboKy6fb/12QDRJDzw==",
+  "dgSpecHash": "dqYWgi0mEXEWJYIHxcTW2Surtt/fGLNCCIlRku+Ql5KuqTbIfCQS7m4oLMTVFK+2U3pJ+V8vRen3FYHQ+Kmcfw==",
   "success": true,
   "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/GoodsService/SparkSwim.ProductsService.csproj",
   "expectedPackageFiles": [
+    "/home/elainezirael/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/mediatr/12.1.0/mediatr.12.1.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "/home/elainezirael/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.data.sqlclient/5.1.1/microsoft.data.sqlclient.5.1.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.data.sqlclient.sni.runtime/5.1.0/microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore/8.0.0-preview.5.23280.1/microsoft.entityframeworkcore.8.0.0-preview.5.23280.1.nupkg.sha512",

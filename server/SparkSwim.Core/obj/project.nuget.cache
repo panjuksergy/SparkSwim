@@ -1,15 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "SMruendDxGLIrQJsaDfZfFXEgZmuVNtuaVfkjb+xqKwFv/ywT7jX6d0r4FxyWPLVpWyBa7unGhCXNFezSGsuEA==",
+  "dgSpecHash": "53cg32uw2stZag99mipCa9AOIGlt8dZ2T9LvKzaRWPQAcwgTYB31D0NSYEHEtHLcDCklj9QX7cCtvdjJ1x0Whg==",
   "success": true,
   "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj",
   "expectedPackageFiles": [
+    "/home/elainezirael/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/mediatr/12.1.0/mediatr.12.1.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.19/microsoft.aspnetcore.cryptography.internal.6.0.19.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.19/microsoft.aspnetcore.cryptography.keyderivation.6.0.19.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.19/microsoft.aspnetcore.identity.entityframeworkcore.6.0.19.nupkg.sha512",
-    "/home/elainezirael/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.data.sqlclient/2.1.4/microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.data.sqlclient.sni.runtime/2.1.1/microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore/6.0.19/microsoft.entityframeworkcore.6.0.19.nupkg.sha512",
