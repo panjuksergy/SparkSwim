@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -27,7 +28,15 @@ void RegisterServices(IServiceCollection services)
         .AddEntityFrameworkStores<UsersDbContext>()
         .AddDefaultTokenProviders();
 
-    services.AddAuthorization();
+    services.AddAuthorization(options =>
+    {
+        var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
+            JwtBearerDefaults.AuthenticationScheme);
+        defaultAuthorizationPolicyBuilder =
+            defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
+        options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
+    });
+
     services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         .AddJwtBearer(options =>
         {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SparkSwim.Core.Models;
@@ -7,8 +8,8 @@ using SparkSwim.UserManagementService.Models;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("[controller]")]
-    [Authorize]
+    [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UserController : BaseController
     {
         private UserManager<AppUser> _userManager;
@@ -19,6 +20,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<IdentityResult> Register(RegisterUserDto registerUserModel)
         {
             var appUser = new AppUser()
@@ -32,13 +34,13 @@ namespace SparkSwim.UserManagementService.Controllers
             return result;
         }
 
-        [HttpPost("update-user")]
-        public async Task<IdentityResult> UpdateUser(UpdateUserDto updateUser)
+        [HttpPost("update")]
+        public async Task<IdentityResult> Update(UpdateUserDto updateUser)
         {
             var userToBeUpdated = await _userManager.FindByIdAsync(UserId.ToString());
 
-            userToBeUpdated.UserName = updateUser.UserName;
-            userToBeUpdated.Email = updateUser.Email;
+            userToBeUpdated.Email = userToBeUpdated.Email;
+            userToBeUpdated.UserName = userToBeUpdated.UserName;
             userToBeUpdated.FirstName = updateUser.FirstName;
             userToBeUpdated.LastName = updateUser.LastName;
 
@@ -46,16 +48,37 @@ namespace SparkSwim.UserManagementService.Controllers
             return result;
         }
 
-        [HttpGet("health")]
-        public async Task<string> Helth()
+        [HttpPost("changepassword")]
+        public async Task<IdentityResult> ChangePassword(ChangePasswordDto changePasswordModel)
         {
-            return "Service is online!";
+            var user = await _userManager.FindByIdAsync(UserId.ToString());
+            var result = await _userManager.ChangePasswordAsync
+                (user, changePasswordModel.CurrentPassword, changePasswordModel.NewPassword);
+
+            return result;
         }
 
-        [HttpGet("info")]
-        public async Task<IActionResult> Info()
+        [HttpPost("remove")]
+        public async Task<IdentityResult> RemoveByUserName(string userName)
         {
-            return Ok(UserId.ToString());
+            var userToBeDeleted = await _userManager.FindByNameAsync(userName);
+            var result = await _userManager.DeleteAsync(userToBeDeleted);
+
+            return result;
+        }
+
+        [HttpGet("all")]
+        public async Task<IEnumerable<AppUser>> GetAll()
+        {
+            var result = _userManager.Users.AsEnumerable();
+            return result;
+        }
+
+        [HttpGet("get")]
+        public async Task<AppUser> GetByName(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            return user;
         }
     }
 }
