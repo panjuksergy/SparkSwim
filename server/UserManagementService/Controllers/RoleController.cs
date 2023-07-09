@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SparkSwim.UserManagementService.Controllers.Base;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Data;
 namespace SparkSwim.UserManagementService.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
     public class RoleController : BaseController
     {
         private readonly RoleManager<IdentityRole> _roleManager;

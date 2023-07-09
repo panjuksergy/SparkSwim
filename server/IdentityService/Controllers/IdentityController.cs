@@ -29,7 +29,8 @@ namespace SparkSwim.IdentityService.Controllers
             var user = await _userIdentityRepository.ValidateUserByEmail(loginUserModel);
 
             return user != null
-                ? Ok(await _jwtService.CreateTokenAsync(user.Id, user.Email, await _userManager.GetRolesAsync(user)))
+                ? Ok(await _jwtService.CreateTokenAsync
+                    (user.Id, user.Email, await _userManager.GetRolesAsync(user)))
                 : Unauthorized();
         }
     }

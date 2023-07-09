@@ -59,7 +59,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("remove")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public async Task<IdentityResult> RemoveByUserName(string userName)
         {
             var userToBeDeleted = await _userManager.FindByNameAsync(userName);
@@ -69,7 +69,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("addrole")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public async Task<IdentityResult> AddRole(AddRoleToUserDto addRoleToUser)
         {
             var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
@@ -83,7 +83,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("removerole")]
-        [AllowAnonymous]
+        [Authorize(Roles = "Admin")]
         public async Task<IdentityResult> RemoveRole(AddRoleToUserDto addRoleToUser)
         {
             var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
@@ -97,6 +97,7 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpGet("all")]
+        [Authorize(Roles = "Admin")]
         public async Task<IEnumerable<AppUser>> GetAll()
         {
             var result = _userManager.Users.AsEnumerable();
