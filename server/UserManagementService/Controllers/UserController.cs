@@ -59,10 +59,39 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("remove")]
+        [AllowAnonymous]
         public async Task<IdentityResult> RemoveByUserName(string userName)
         {
             var userToBeDeleted = await _userManager.FindByNameAsync(userName);
             var result = await _userManager.DeleteAsync(userToBeDeleted);
+
+            return result;
+        }
+
+        [HttpPost("addrole")]
+        [AllowAnonymous]
+        public async Task<IdentityResult> AddRole(AddRoleToUserDto addRoleToUser)
+        {
+            var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
+            if (user == null)
+            {
+                return IdentityResult.Failed(new IdentityError() { Description = $"User {addRoleToUser.UserName} was not found." });
+            }
+            var result = await _userManager.AddToRoleAsync(user, addRoleToUser.RoleName);
+
+            return result;
+        }
+
+        [HttpPost("removerole")]
+        [AllowAnonymous]
+        public async Task<IdentityResult> RemoveRole(AddRoleToUserDto addRoleToUser)
+        {
+            var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
+            if (user == null)
+            {
+                return IdentityResult.Failed(new IdentityError() { Description = $"User {addRoleToUser.UserName} was not found." });
+            }
+            var result = await _userManager.RemoveFromRoleAsync(user, addRoleToUser.RoleName);
 
             return result;
         }

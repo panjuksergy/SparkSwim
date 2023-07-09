@@ -16,9 +16,9 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IdentityResult> Add(IdentityRole role) 
+        public async Task<IdentityResult> Add(string roleName) 
         {
-            var result = await _roleManager.CreateAsync(role);
+            var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
             return result;
         }
 
@@ -39,8 +39,9 @@ namespace SparkSwim.UserManagementService.Controllers
         }
 
         [HttpPost("remove")]
-        public async Task<IdentityResult> Remove(IdentityRole role)
+        public async Task<IdentityResult> Remove(string roleName)
         {
+            var role = await _roleManager.FindByNameAsync(roleName);
             var result = await _roleManager.DeleteAsync(role);
             return result;
         }

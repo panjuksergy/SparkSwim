@@ -14,5 +14,12 @@ namespace SparkSwim.UserManagementService.Controllers
         {
             return Ok($"{UserId}");
         }
+
+        [HttpGet("admincheck")]
+        [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
+        public async Task<IActionResult> AdminCheck()
+        {
+            return Ok("User is admin");
+        }
     }
 }
