@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SparkSwim.Core.Data;
+using SparkSwim.Core.Identity;
 using SparkSwim.Core.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,11 +24,16 @@ void RegisterServices(IServiceCollection services)
     services.AddIdentity<AppUser, IdentityRole>()
         .AddEntityFrameworkStores<UsersDbContext>()
         .AddDefaultTokenProviders();
+
+    services.AddJwtAuth(builder.Configuration);
 }
 
 void Configure(IApplicationBuilder app)
 {
     app.UseRouting();
+
+    app.UseAuthentication();
+    app.UseAuthorization();
 
     app.UseEndpoints(endpoints =>
     {

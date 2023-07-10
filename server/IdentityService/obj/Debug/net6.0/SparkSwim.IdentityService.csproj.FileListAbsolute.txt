@@ -66,3 +66,4 @@ E:\SparkSwim\server\IdentityService\bin\Debug\net6.0\SparkSwim.Core.pdb
 E:\SparkSwim\server\IdentityService\obj\Debug\net6.0\SparkSwim.IdentityService.csproj.CopyComplete
 E:\SparkSwim\server\IdentityService\bin\Debug\net6.0\appsettings.Development.json
 E:\SparkSwim\server\IdentityService\bin\Debug\net6.0\appsettings.json
+E:\SparkSwim\server\IdentityService\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SparkSwim.Core.Models;
 using SparkSwim.IdentityService.Configuration;
@@ -22,13 +23,16 @@ namespace SparkSwim.IdentityService.Services
             _issuer = options.Value.Issuer;
         }
 
-        public async Task<string> CreateTokenAsync(string id, string email)
+        public async Task<string> CreateTokenAsync(string id, string email, IEnumerable<string> roles)
         {
-            var claims = new[]
+            var claims = new List<Claim>();
+            claims.Add(new Claim(ClaimTypes.NameIdentifier, id));
+            claims.Add(new Claim(ClaimTypes.Email, email));
+
+            foreach (var role in roles)
             {
-                new Claim(ClaimTypes.NameIdentifier, id),
-                new Claim(ClaimTypes.Email, email),
-            };
+                claims.Add(new Claim(ClaimTypes.Role, role));
+            }
 
             var credentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
