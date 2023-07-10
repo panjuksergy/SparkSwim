@@ -1,11 +1,8 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using SparkSwim.Core.Data;
+using SparkSwim.Core.Identity;
 using SparkSwim.Core.Models;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 RegisterServices(builder.Services);
@@ -28,30 +25,7 @@ void RegisterServices(IServiceCollection services)
         .AddEntityFrameworkStores<UsersDbContext>()
         .AddDefaultTokenProviders();
 
-    services.AddAuthorization(options =>
-    {
-        var defaultAuthorizationPolicyBuilder = new AuthorizationPolicyBuilder(
-            JwtBearerDefaults.AuthenticationScheme);
-        defaultAuthorizationPolicyBuilder =
-            defaultAuthorizationPolicyBuilder.RequireAuthenticatedUser();
-        options.DefaultPolicy = defaultAuthorizationPolicyBuilder.Build();
-    });
-
-    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(options =>
-        {
-            options.TokenValidationParameters = new()
-            {
-                ValidateIssuer = true,
-                ValidIssuer = "SparkSwim.IdentityServer",
-
-                ValidateAudience = true,
-                ValidAudience = "Audience",
-                ValidateLifetime = true,
-                ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("365f100c-8f1e-4ff7-8c5c-c663c9a20f26"))
-            };
-        });
+    services.AddJwtAuth(builder.Configuration);
 }
 
 void Configure(IApplicationBuilder app)

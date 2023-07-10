@@ -95,7 +95,7 @@ namespace SparkSwim.UserManagementService.Controllers
 
             return result;
         }
-
+        
         [HttpGet("all")]
         [Authorize(Roles = "Admin")]
         public async Task<IEnumerable<AppUser>> GetAll()

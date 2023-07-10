@@ -39,7 +39,6 @@ namespace SparkSwim.IdentityService.Services
             var jwt = new JwtSecurityToken(
                 claims: claims,
                 issuer: _issuer,
-                audience: "Audience",
                 expires: DateTime.UtcNow.Add(_expirityDuration),
                 signingCredentials: credentials);
 
