@@ -9,5 +9,6 @@ public class Product
     public int ProductCount { get; set; }
     public decimal Price { get; set; }
     public Discount? Discount { get; set; }
-    public IEnumerable<ImagesProductModel> ProductImages { get; set; }
+    public ICollection<ImagesProductModel> ProductImages { get; set; }
+    public ProductType ProductType { get; set; }
 }

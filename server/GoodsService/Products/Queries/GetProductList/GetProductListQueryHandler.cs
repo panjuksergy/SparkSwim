@@ -1,5 +1,7 @@
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using SparkSwim.GoodsService.Interfaces;
 using SparkSwim.GoodsService.Products.Queries.GetProduct;
 
@@ -15,9 +17,15 @@ public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, P
         _productDbContext = dbContext;
         _mapper = mapper;
     }
-    
+
     public async Task<ProductListVm> Handle(GetProductListQuery request, CancellationToken cancellationToken)
     {
-        var productsQuery = await _productDbContext.Products.Where()
+        var productsQuery = await _productDbContext.Products
+            .Where(_ => _.ProductId == request.ProductId)
+            .Take(request.CountToGet)
+            .ProjectTo<ProductLookUpDto>(_mapper.ConfigurationProvider)
+            .ToListAsync(cancellationToken);
+
+        return new ProductListVm { Products = productsQuery };
     }
 }
