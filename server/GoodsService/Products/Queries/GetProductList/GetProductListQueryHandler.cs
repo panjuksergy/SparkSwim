@@ -21,7 +21,7 @@ public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, P
     public async Task<ProductListVm> Handle(GetProductListQuery request, CancellationToken cancellationToken)
     {
         var productsQuery = await _productDbContext.Products
-            .Where(_ => _.ProductId == request.ProductId)
+            .Skip(request.NumberFromToSkip)
             .Take(request.CountToGet)
             .ProjectTo<ProductLookUpDto>(_mapper.ConfigurationProvider)
             .ToListAsync(cancellationToken);

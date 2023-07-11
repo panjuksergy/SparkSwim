@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "Niv0HYuGdwG5fuQsLu0sDwjfMCiv5c6855gNLH8Mhgg=",
-  "Source": "SparkSwim.GoodsService",
-  "BasePath": "_content/SparkSwim.GoodsService",
+  "Hash": "V5wo8DLV/+2nGCcDar8ZR1IuMUqgrBbK4RqjcABjpZ0=",
+  "Source": "SparkSwim.ProductsService",
+  "BasePath": "_content/SparkSwim.ProductsService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

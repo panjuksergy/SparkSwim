@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Gnft2gy3BiHVUtOYj0xWcZ++/BgDuiO77NB7TGcYvjDPUVKMRuhGPTGZjzIHQqogLVGvAgxzazkiy1CaMmHHDg==",
+  "dgSpecHash": "txrUqilqnZu3Q0PO9dnfZP23ioVpOFJgRoEYn0xK/UTx4Br4VTOGmGZw0oicNkeq4hsnUzQGGBmvUyV3r+y6zA==",
   "success": true,
   "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/GoodsService/SparkSwim.ProductsService.csproj",
   "expectedPackageFiles": [
     "/home/elainezirael/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/mediatr/12.1.0/mediatr.12.1.0.nupkg.sha512",
