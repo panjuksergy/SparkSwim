@@ -5,15 +5,16 @@ using SparkSwim.GoodsService.Products.Queries.GetProductList;
 
 namespace SparkSwim.GoodsService.Controllers;
 
+[AllowAnonymous]
 public class ProductController : BaseController
 {
     [AllowAnonymous]
     [HttpGet("getAllProducts")]
-    public async Task<ActionResult<ProductListVm>> GetAllProducts([FromBody] int numberToSkip)
+    public async Task<ActionResult<ProductListVm>> GetAllProducts([FromBody] GetProductListQuery request)
     {
         var query = new GetProductListQuery
         {
-            NumberFromToSkip = numberToSkip,
+            NumberFromToSkip = request.NumberFromToSkip,
         };
         var vm = await Mediator.Send(query);
         return Ok(vm);

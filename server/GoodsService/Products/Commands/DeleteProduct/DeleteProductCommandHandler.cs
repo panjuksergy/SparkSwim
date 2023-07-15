@@ -25,7 +25,7 @@ namespace SparkSwim.GoodsService.Products.Commands.DeleteProduct
             }
 
             _dbContext.Products.Remove(productToDelete);
-            _dbContext.SaveChangesAsync(cancellationToken);
+            await _dbContext.SaveChangesAsync(cancellationToken);
         }
     }
 }

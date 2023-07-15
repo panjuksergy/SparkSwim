@@ -19,6 +19,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
             CreationDate = DateTime.Now,
             ProductImages = request.Images,
             ProductCount = request.ProductCount,
+            ProductType = request.ProductType,
             Price = request.Price,
             Discount = request.Discount,
         };

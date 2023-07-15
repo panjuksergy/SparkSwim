@@ -44,7 +44,6 @@ void RegisterServices(IServiceCollection services)
         config.AddProfile(new AssemblyMappingProfile(typeof(IProductDbContext).Assembly));
     });
     services.AddApplication();
-    services.AddApplication();
     services.AddControllers();
 
     services.AddDbContext<ProductDbContext>(options =>
