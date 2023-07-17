@@ -6,17 +6,23 @@ namespace SparkSwim.GoodsService.Goods.Models;
 
 public class CreateProductDto : IMapWith<CreateProductCommand>
 {
-    public Guid ProductId { get; set; }
     public string Title { get; set; }
     public string Description { get; set; }
     public int ProductCount { get; set; }
-    public ProductType ProductType { get; set; }
-    public ImagesProductModel Images { get; set; }
+    public int ProductTypeId { get; set; }
     public decimal Price { get; set; }
-    public Discount? Discount { get; set; }
-
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<CreateProductDto, CreateProductCommand>();
+        profile.CreateMap<CreateProductCommand, CreateProductDto>()
+            .ForMember(_ => _.Title,
+                opt => opt.MapFrom(product => product.Title))
+            .ForMember(_ => _.Description,
+                opt => opt.MapFrom(product => product.Description))
+            .ForMember(_ => _.Price,
+                opt => opt.MapFrom(product => product.Price))
+            .ForMember(_ => _.ProductTypeId,
+                opt => opt.MapFrom(product => product.ProductTypeId))
+            .ForMember(_ => _.ProductCount,
+                opt => opt.MapFrom(product => product.ProductCount));
     }
 }

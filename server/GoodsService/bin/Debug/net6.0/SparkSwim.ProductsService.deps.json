@@ -13,7 +13,7 @@
           "MediatR": "12.1.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.0-preview.6.23329.4",
-          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.5.23280.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-preview.6.23329.4",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0-preview.6.23329.4"
         },
         "runtime": {
@@ -236,7 +236,7 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.5.23280.1": {
+      "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.6.23329.4": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
           "Microsoft.EntityFrameworkCore.Relational": "8.0.0-preview.6.23329.4"
@@ -244,7 +244,7 @@
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.23.28001"
+            "fileVersion": "8.0.23.32904"
           }
         }
       },
@@ -825,12 +825,12 @@
       "path": "microsoft.entityframeworkcore.relational/8.0.0-preview.6.23329.4",
       "hashPath": "microsoft.entityframeworkcore.relational.8.0.0-preview.6.23329.4.nupkg.sha512"
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.5.23280.1": {
+    "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.6.23329.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FRGINQn5mKLG7Swfph0/DUfdJTd3fSOv1quRLLS2f+w3VDFos5G+vhe70fTIfx9nivKsQHUX/21/9R7DZkoDeQ==",
-      "path": "microsoft.entityframeworkcore.sqlserver/8.0.0-preview.5.23280.1",
-      "hashPath": "microsoft.entityframeworkcore.sqlserver.8.0.0-preview.5.23280.1.nupkg.sha512"
+      "sha512": "sha512-lkXPk7A0J3VmgZ/6p704BWqgdwIqZGXc4ZGOGY9NblK/VIXsFbtRYfFtiYEM+JQh9R2taI4MJ6hZii/Qbg40Gw==",
+      "path": "microsoft.entityframeworkcore.sqlserver/8.0.0-preview.6.23329.4",
+      "hashPath": "microsoft.entityframeworkcore.sqlserver.8.0.0-preview.6.23329.4.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/8.0.0-preview.6.23329.4": {
       "type": "package",

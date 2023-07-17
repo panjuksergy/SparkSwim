@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "BuTi2qYU+OzJJL6j+3BLk8QGPakKAw+6TdCCYh6XiYsmoGa4MqbefH+g/kKXpPvMDt3qmRXmbeQbngRevqYeUA==",
+  "dgSpecHash": "W14UMim627gcWkAZJNgHHSkW9WVpyIJxegfpooE6uNSAikFadqr6qALg9jsiHs9KfImcoJpzm7vRdVlTLRxA5g==",
   "success": true,
   "projectFilePath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/GoodsService/SparkSwim.ProductsService.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,7 @@
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.0-preview.6.23329.4/microsoft.entityframeworkcore.analyzers.8.0.0-preview.6.23329.4.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.design/8.0.0-preview.6.23329.4/microsoft.entityframeworkcore.design.8.0.0-preview.6.23329.4.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.relational/8.0.0-preview.6.23329.4/microsoft.entityframeworkcore.relational.8.0.0-preview.6.23329.4.nupkg.sha512",
-    "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.sqlserver/8.0.0-preview.5.23280.1/microsoft.entityframeworkcore.sqlserver.8.0.0-preview.5.23280.1.nupkg.sha512",
+    "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.sqlserver/8.0.0-preview.6.23329.4/microsoft.entityframeworkcore.sqlserver.8.0.0-preview.6.23329.4.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.entityframeworkcore.tools/8.0.0-preview.6.23329.4/microsoft.entityframeworkcore.tools.8.0.0-preview.6.23329.4.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.extensions.caching.abstractions/8.0.0-preview.6.23329.7/microsoft.extensions.caching.abstractions.8.0.0-preview.6.23329.7.nupkg.sha512",
     "/home/elainezirael/.nuget/packages/microsoft.extensions.caching.memory/8.0.0-preview.6.23329.7/microsoft.extensions.caching.memory.8.0.0-preview.6.23329.7.nupkg.sha512",

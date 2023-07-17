@@ -8,6 +8,12 @@ namespace SparkSwim.GoodsService.Controllers;
 [AllowAnonymous]
 public class ProductController : BaseController
 {
+    [HttpGet("checkMe")]
+    public ActionResult CheckMe()
+    {
+        return Ok();
+    }
+    
     [AllowAnonymous]
     [HttpGet("getAllProducts")]
     public async Task<ActionResult<ProductListVm>> GetAllProducts([FromBody] GetProductListQuery request)

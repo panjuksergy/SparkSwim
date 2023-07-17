@@ -14,5 +14,5 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
         builder.Property(_ => _.Price).IsRequired();
         builder.HasMany(_ => _.ProductImages).WithOne(_ => _.Product).HasForeignKey(_ => _.ProductId);
         builder.HasOne(_ => _.ProductType).WithMany(_ => _.Products).HasForeignKey(_ => _.ProductTypeId);
-    }
+    }   
 }

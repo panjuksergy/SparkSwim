@@ -35,7 +35,13 @@ Configure(app);
 app.Run();
 
 void RegisterServices(IServiceCollection services)
-{
+{    
+    services.AddDbContext<IProductDbContext, ProductDbContext>(options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
+    );
+    
+    services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
+    
     services.AddControllers();
 
     services.AddAutoMapper(config =>
@@ -45,11 +51,6 @@ void RegisterServices(IServiceCollection services)
     });
     services.AddApplication();
     services.AddControllers();
-
-    services.AddDbContext<ProductDbContext>(options =>
-    {
-        options.UseSqlServer(builder.Configuration.GetConnectionString("UsersDbConnection"));
-    });
 }
 
 void Configure(IApplicationBuilder app)

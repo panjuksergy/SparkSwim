@@ -20,6 +20,7 @@ public class ProductAdminController : BaseController
     public ProductAdminController(IMapper mapper) => _mapper = mapper;
 
     #region Products
+    [AllowAnonymous]
     [HttpPost("createProduct")]
     public async Task<ActionResult<CreateProductCommand>> CreateProduct([FromBody] CreateProductDto createProductDto)
     {

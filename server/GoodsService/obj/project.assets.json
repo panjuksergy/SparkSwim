@@ -293,11 +293,11 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.5.23280.1": {
+      "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.6.23329.4": {
         "type": "package",
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
-          "Microsoft.EntityFrameworkCore.Relational": "8.0.0-preview.5.23280.1"
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.0-preview.6.23329.4"
         },
         "compile": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
@@ -1508,17 +1508,17 @@
         "microsoft.entityframeworkcore.relational.nuspec"
       ]
     },
-    "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.5.23280.1": {
-      "sha512": "FRGINQn5mKLG7Swfph0/DUfdJTd3fSOv1quRLLS2f+w3VDFos5G+vhe70fTIfx9nivKsQHUX/21/9R7DZkoDeQ==",
+    "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-preview.6.23329.4": {
+      "sha512": "lkXPk7A0J3VmgZ/6p704BWqgdwIqZGXc4ZGOGY9NblK/VIXsFbtRYfFtiYEM+JQh9R2taI4MJ6hZii/Qbg40Gw==",
       "type": "package",
-      "path": "microsoft.entityframeworkcore.sqlserver/8.0.0-preview.5.23280.1",
+      "path": "microsoft.entityframeworkcore.sqlserver/8.0.0-preview.6.23329.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll",
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
-        "microsoft.entityframeworkcore.sqlserver.8.0.0-preview.5.23280.1.nupkg.sha512",
+        "microsoft.entityframeworkcore.sqlserver.8.0.0-preview.6.23329.4.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
       ]
     },
@@ -3079,7 +3079,7 @@
       "MediatR >= 12.1.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 11.1.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0-preview.6.23329.4",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.5.23280.1",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0-preview.6.23329.4",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.6.23329.4"
     ]
   },
@@ -3144,7 +3144,7 @@
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
-            "version": "[8.0.0-preview.5.23280.1, )"
+            "version": "[8.0.0-preview.6.23329.4, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
