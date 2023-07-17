@@ -6,7 +6,7 @@ namespace SparkSwim.GoodsService.Discounts.Queries.GetDiscount;
 
 public class DiscountVm : IMapWith<Discount>
 {
-    public Guid ProductId { get; set; }
+    public Guid DiscountId { get; set; }
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
     public decimal DiscountValue { get; set; }

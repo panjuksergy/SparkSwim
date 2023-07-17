@@ -11,9 +11,11 @@ public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountComman
 
     public async Task<Guid> Handle(CreateDiscountCommand request, CancellationToken cancellationToken)
     {
+        var getProdusctsForDiscount = _dbContext.Products.Where(_ => request.ProductsIds.Contains(_.ProductId)).ToList();
         var discount = new Discount
         {
-            ProductId = Guid.NewGuid(),
+            Products = getProdusctsForDiscount,
+            DiscountId = Guid.NewGuid(),
             DateFrom = request.DateFrom,
             DateTo = request.DateTo,
             DiscountValue = request.DiscountValue
@@ -21,6 +23,6 @@ public class CreateDiscountCommandHandler : IRequestHandler<CreateDiscountComman
 
         await _dbContext.Discount.AddAsync(discount, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);
-        return discount.ProductId;
+        return discount.DiscountId;
     }
 }

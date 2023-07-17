@@ -14,14 +14,13 @@ public class UpdateDiscountCommandHandler : IRequestHandler<UpdateDiscountComman
     public async Task Handle(UpdateDiscountCommand request, CancellationToken cancellationToken)
     {
         var existDiscount =
-            await _dbContext.Discount.FirstOrDefaultAsync(_ => _.ProductId == request.ProductId, cancellationToken);
+            await _dbContext.Discount.FirstOrDefaultAsync(_ => _.DiscountId == request.DiscountId, cancellationToken);
 
-        if (existDiscount == null || existDiscount.ProductId != request.ProductId)
+        if (existDiscount == null || existDiscount.DiscountId != request.DiscountId)
         {
-            throw new NotFoundException(nameof(Products), request.ProductId);
+            throw new NotFoundException(nameof(Discounts), request.DiscountId);
         }
-
-        existDiscount.ProductId = request.ProductId;
+        
         existDiscount.DiscountValue = request.DiscountValue;
         existDiscount.DateFrom = request.DateFrom;
         existDiscount.DateTo = request.DateTo;

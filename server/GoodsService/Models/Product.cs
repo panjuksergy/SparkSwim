@@ -12,6 +12,7 @@ public class Product
     [DecimalPrecision(18, 2)]
     public decimal Price { get; set; }
     public Discount? Discount { get; set; }
+    public Guid? DiscountId { get; set; }
     public ICollection<ImagesProductModel>? ProductImages { get; set; }
     public int ProductTypeId { get; set; }
     public ProductType ProductType { get; set; }

@@ -25,14 +25,12 @@ public class GetDiscountListQueryHandler : IRequestHandler<GetDiscountListQuery,
         /// If category == null => Take discount from every category.
 
         var discounts = await (from discount in _productDbContext.Discount
-            join product in _productDbContext.Products on discount.ProductId equals product.ProductId
-            where (request.ProductType == null || product.ProductType == request.ProductType)
-                  && (request.DateFrom == null || discount.DateFrom >= request.DateFrom)
+            where (request.DateFrom == null || discount.DateFrom >= request.DateFrom)
                   && (request.DateTo == null || discount.DateTo <= request.DateTo)
                   && (request.DiscountValue == null || discount.DiscountValue >= request.DiscountValue)
             select discount).ProjectTo<DiscountLookUpDto>(_mapper.ConfigurationProvider)
                             .ToListAsync(cancellationToken);
 
-        return new DiscountListVm { Discount = discounts };
+        return new DiscountListVm { Discounts = discounts };
     }
 }

@@ -8,6 +8,7 @@ public class DiscountConfiguration : IEntityTypeConfiguration<Discount>
 {
     public void Configure(EntityTypeBuilder<Discount> builder)
     {
-        builder.HasKey(_ => _.ProductId);
+        builder.HasKey(_ => _.DiscountId);
+        builder.HasMany(_ => _.Products).WithOne(_ => _.Discount).HasForeignKey(_ => _.ProductId);
     }
 }

@@ -13,16 +13,6 @@ public class CreateProductDto : IMapWith<CreateProductCommand>
     public decimal Price { get; set; }
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<CreateProductCommand, CreateProductDto>()
-            .ForMember(_ => _.Title,
-                opt => opt.MapFrom(product => product.Title))
-            .ForMember(_ => _.Description,
-                opt => opt.MapFrom(product => product.Description))
-            .ForMember(_ => _.Price,
-                opt => opt.MapFrom(product => product.Price))
-            .ForMember(_ => _.ProductTypeId,
-                opt => opt.MapFrom(product => product.ProductTypeId))
-            .ForMember(_ => _.ProductCount,
-                opt => opt.MapFrom(product => product.ProductCount));
+        profile.CreateMap<CreateProductCommand, CreateProductDto>();
     }
 }

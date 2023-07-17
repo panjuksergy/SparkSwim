@@ -62,7 +62,7 @@ public class ProductAdminController : BaseController
     {
         var command = new GetDiscountQuery
         {
-            ProductId = Id
+            DiscountId = Id
         };
         await Mediator.Send(command);
         return Ok();

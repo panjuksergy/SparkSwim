@@ -15,11 +15,11 @@ public class DeleteProductCommandHandler : IRequestHandler<DeleteDiscountCommand
 
     public async Task Handle(DeleteDiscountCommand request, CancellationToken cancellationToken)
     {
-        var discountToDelete = await _dbContext.Discount.FindAsync(request.ProductId);
+        var discountToDelete = await _dbContext.Discount.FindAsync(request.DiscountId);
 
-        if (discountToDelete == null || discountToDelete.ProductId != request.ProductId)
+        if (discountToDelete == null || discountToDelete.DiscountId != request.DiscountId)
         {
-            throw new NotFoundException(nameof(Products), request.ProductId);
+            throw new NotFoundException(nameof(Discounts), request.DiscountId);
         }
 
         _dbContext.Discount.Remove(discountToDelete);

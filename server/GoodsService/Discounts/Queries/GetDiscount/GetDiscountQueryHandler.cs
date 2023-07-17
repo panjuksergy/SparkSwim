@@ -20,11 +20,11 @@ public class GetDiscountQueryHandler: IRequestHandler<GetDiscountQuery, Discount
     public async Task<DiscountVm> Handle(GetDiscountQuery request, CancellationToken cancellationToken)
     {
         var entity =
-            await _productDbContext.Discount.FirstOrDefaultAsync(_ => _.ProductId == request.ProductId,
+            await _productDbContext.Discount.FirstOrDefaultAsync(_ => _.DiscountId == request.DiscountId,
                 cancellationToken);
-        if (entity == null || entity.ProductId != request.ProductId)
+        if (entity == null || entity.DiscountId != request.DiscountId)
         {
-            throw new NotFoundException(nameof(Product), request.ProductId);
+            throw new NotFoundException(nameof(Discounts), request.DiscountId);
         }
 
         return _mapper.Map<DiscountVm>(entity);

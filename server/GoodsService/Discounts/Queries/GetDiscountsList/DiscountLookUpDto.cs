@@ -5,6 +5,7 @@ namespace SparkSwim.GoodsService.Discounts.Queries.GetDiscountsList;
 
 public class DiscountLookUpDto
 {
+    public Guid DiscountId { get; set; }
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
     public decimal DiscountValue { get; set; }    
