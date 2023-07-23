@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "J/Dv3RArjSEtorViW0iSjjexxk+KinKEjP81fU4kXlELut3k0bs5pE1mP25OadminJA/R42Y+FGp2Y1XvPC3Kw==",
+  "dgSpecHash": "jb1i41/az/SyzMyniGZzCVnGgnbKZIxtbBVuQjUmUqQS3QP+8c65Umyw0fj/9EqnmaqrDYuz6ty3mtwvFEe0QQ==",
   "success": true,
   "projectFilePath": "E:\\SparkSwim\\server\\IdentityService\\SparkSwim.IdentityService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Nimbus-2001\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.19\\microsoft.aspnetcore.authentication.jwtbearer.6.0.19.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.19\\microsoft.aspnetcore.cryptography.internal.6.0.19.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.19\\microsoft.aspnetcore.cryptography.keyderivation.6.0.19.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.19\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.19.nupkg.sha512",
-    "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\Nimbus-2001\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.19\\microsoft.entityframeworkcore.6.0.19.nupkg.sha512",
