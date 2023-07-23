@@ -15,7 +15,7 @@ public class UpdateDiscountCommandHandler : IRequestHandler<UpdateDiscountComman
     {
         var existDiscount =
             await _dbContext.Discount.FirstOrDefaultAsync(_ => _.DiscountId == request.DiscountId, cancellationToken);
-
+        
         if (existDiscount == null || existDiscount.DiscountId != request.DiscountId)
         {
             throw new NotFoundException(nameof(Discounts), request.DiscountId);

@@ -21,6 +21,7 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand>
         }
 
         existProduct.Title = request.Title;
+        existProduct.Discount = await _dbContext.Discount.FirstOrDefaultAsync(_ => _.DiscountId == request.DiscountId);
         existProduct.Description = request.Description;
         existProduct.CreationDate = DateTime.Now;
         existProduct.Price = request.Price;

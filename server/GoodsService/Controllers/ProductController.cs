@@ -28,11 +28,12 @@ public class ProductController : BaseController
 
     [AllowAnonymous]
     [HttpGet("product/{Id}")]
-    public async Task<ActionResult<ProductVm>> GetProductWithoutDetailsById(Guid Id)
+    public async Task<ActionResult<ProductVm>> GetProductWithoutDetailsById(string Id)
     {
+        
         var query = new GetProductQuery
         {
-            ProductId = Id
+            ProductId = Guid.Parse(Id)
         };
         var vm = await Mediator.Send(query);
         return Ok(vm);

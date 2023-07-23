@@ -7,13 +7,13 @@ namespace SparkSwim.GoodsService.Goods.Models;
 
 public class CreateDiscountDto : IMapWith<CreateDiscountCommand>
 {
-    public Guid DiscountId { get; set; }
+    public ICollection<Guid> ProductsIds { get; set; }
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
     public decimal DiscountValue { get; set; }
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<CreateProductDto, CreateProductCommand>();
+        profile.CreateMap<CreateDiscountDto, CreateDiscountCommand>();
     }
 }

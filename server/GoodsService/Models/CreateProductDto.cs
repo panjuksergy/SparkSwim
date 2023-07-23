@@ -13,6 +13,6 @@ public class CreateProductDto : IMapWith<CreateProductCommand>
     public decimal Price { get; set; }
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<CreateProductCommand, CreateProductDto>();
+        profile.CreateMap<CreateProductDto, CreateProductCommand>();
     }
 }

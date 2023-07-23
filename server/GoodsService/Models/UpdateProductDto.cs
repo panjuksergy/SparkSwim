@@ -13,7 +13,7 @@ public class UpdateProductDto : IMapWith<UpdateProductCommand>
     public ImagesProductModel Images { get; set; }
     public decimal Price { get; set; }
     public ProductType ProductType { get; set; }
-    public Discount? Discount { get; set; }
+    public Guid? DiscountId { get; set; }
 
     public void Mapping(Profile profile)
     {

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SparkSwim.GoodsService;
 
@@ -11,9 +12,11 @@ using SparkSwim.GoodsService;
 namespace SparkSwim.GoodsService.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    partial class ProductDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230723205924_microUpdateForDiscount1.1")]
+    partial class microUpdateForDiscount11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +68,6 @@ namespace SparkSwim.GoodsService.Migrations
             modelBuilder.Entity("SparkSwim.GoodsService.Goods.Models.Product", b =>
                 {
                     b.Property<Guid>("ProductId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
@@ -75,9 +77,6 @@ namespace SparkSwim.GoodsService.Migrations
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
-
-                    b.Property<Guid?>("DiscountId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -94,8 +93,6 @@ namespace SparkSwim.GoodsService.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ProductId");
-
-                    b.HasIndex("DiscountId");
 
                     b.HasIndex("ProductTypeId");
 
@@ -134,7 +131,9 @@ namespace SparkSwim.GoodsService.Migrations
                 {
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.Discount", "Discount")
                         .WithMany("Products")
-                        .HasForeignKey("DiscountId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.ProductType", "ProductType")
                         .WithMany("Products")

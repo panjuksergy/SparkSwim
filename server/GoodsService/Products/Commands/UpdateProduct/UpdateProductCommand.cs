@@ -10,5 +10,6 @@ public class UpdateProductCommand : IRequest
     public string Description { get; set; }
     public decimal Price { get; set; }
     public ProductType ProductType { get; set; }
+    public Guid? DiscountId { get; set; }
     public ICollection<ImagesProductModel> ProductImages { get; set; }
 }

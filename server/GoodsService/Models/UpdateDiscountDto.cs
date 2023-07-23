@@ -1,9 +1,10 @@
 using AutoMapper;
+using SparkSwim.GoodsService.Common.Mapping;
 using SparkSwim.GoodsService.Discounts.Commands.UpdateDiscount;
 
 namespace SparkSwim.GoodsService.Goods.Models;
 
-public class UpdateDiscountDto
+public class UpdateDiscountDto : IMapWith<UpdateDiscountCommand>
 {
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
@@ -11,6 +12,6 @@ public class UpdateDiscountDto
     
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<UpdateProductDto, UpdateDiscountCommand>();
+        profile.CreateMap<UpdateDiscountDto, UpdateDiscountCommand>();
     }
 }
