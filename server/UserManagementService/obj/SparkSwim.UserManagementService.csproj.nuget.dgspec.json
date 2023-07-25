@@ -1,28 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "E:\\SparkSwim\\server\\UserManagementService\\SparkSwim.UserManagementService.csproj": {}
+    "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/UserManagementService/SparkSwim.UserManagementService.csproj": {}
   },
   "projects": {
-    "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj": {
+    "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj",
+        "projectUniqueName": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj",
         "projectName": "SparkSwim.Core",
-        "projectPath": "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj",
-        "packagesPath": "C:\\Users\\Nimbus-2001\\.nuget\\packages\\",
-        "outputPath": "E:\\SparkSwim\\server\\SparkSwim.Core\\obj\\",
+        "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj",
+        "packagesPath": "/home/elainezirael/.nuget/packages/",
+        "outputPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nimbus-2001\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/elainezirael/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Nimbus-2001\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,9 +38,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "AutoMapper": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[12.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.1.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -64,8 +65,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -74,38 +74,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.118/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\SparkSwim\\server\\UserManagementService\\SparkSwim.UserManagementService.csproj": {
+    "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/UserManagementService/SparkSwim.UserManagementService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\SparkSwim\\server\\UserManagementService\\SparkSwim.UserManagementService.csproj",
+        "projectUniqueName": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/UserManagementService/SparkSwim.UserManagementService.csproj",
         "projectName": "SparkSwim.UserManagementService",
-        "projectPath": "E:\\SparkSwim\\server\\UserManagementService\\SparkSwim.UserManagementService.csproj",
-        "packagesPath": "C:\\Users\\Nimbus-2001\\.nuget\\packages\\",
-        "outputPath": "E:\\SparkSwim\\server\\UserManagementService\\obj\\",
+        "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/UserManagementService/SparkSwim.UserManagementService.csproj",
+        "packagesPath": "/home/elainezirael/.nuget/packages/",
+        "outputPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/UserManagementService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nimbus-2001\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/elainezirael/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-          "C:\\Users\\Nimbus-2001\\.nuget\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj": {
-                "projectPath": "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj"
+              "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj": {
+                "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj"
               }
             }
           }
@@ -120,9 +116,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "AutoMapper": {
               "target": "Package",
-              "version": "[6.0.19, )"
+              "version": "[12.0.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -147,8 +143,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -160,7 +155,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.118/RuntimeIdentifierGraph.json"
         }
       }
     }
