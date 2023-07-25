@@ -1,8 +1,4 @@
-using MediatR;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SparkSwim.Core.Identity;
 using SparkSwim.Core.Mapping;
 using SparkSwim.OrderService.Data;

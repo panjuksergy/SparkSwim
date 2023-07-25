@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SparkSwim.GoodsService.Products.Queries.GetProduct;
@@ -5,10 +6,9 @@ using SparkSwim.GoodsService.Products.Queries.GetProductList;
 
 namespace SparkSwim.GoodsService.Controllers;
 
-[AllowAnonymous]
+[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
 public class ProductController : BaseController
 {
-    [AllowAnonymous]
     [HttpGet("getAllProducts")]
     public async Task<ActionResult<ProductListVm>> GetAllProducts([FromBody] GetProductListQuery request)
     {
@@ -21,7 +21,6 @@ public class ProductController : BaseController
         return Ok(vm);
     }
 
-    [AllowAnonymous]
     [HttpGet("product/{Id}")]
     public async Task<ActionResult<ProductVm>> GetProductWithoutDetailsById(Guid Id)
     {
@@ -34,7 +33,6 @@ public class ProductController : BaseController
         return Ok(vm);
     }
 
-    [AllowAnonymous]
     [HttpGet("details/{Id}")]
     public async Task<ActionResult<ProductDetailsVm>> GetProductDetails(Guid Id)
     {

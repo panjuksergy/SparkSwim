@@ -1,7 +1,6 @@
 using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using SparkSwim.GoodsService.Common.Mapping;
 using SparkSwim.GoodsService.Exceptions;
 using SparkSwim.GoodsService.Goods.Models;
 using SparkSwim.GoodsService.Interfaces;

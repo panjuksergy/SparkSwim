@@ -13,14 +13,13 @@ using SparkSwim.GoodsService.Products.Commands.UpdateProduct;
 
 namespace SparkSwim.GoodsService.Controllers;
 
-[AllowAnonymous]
+[Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
 public class ProductAdminController : BaseController
 {
     private readonly IMapper _mapper;
     public ProductAdminController(IMapper mapper) => _mapper = mapper;
 
     #region Products
-    [AllowAnonymous]
     [HttpPost("createProduct")]
     public async Task<ActionResult<CreateProductCommand>> CreateProduct([FromBody] CreateProductDto createProductDto)
     {

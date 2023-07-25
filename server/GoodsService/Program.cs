@@ -1,16 +1,9 @@
-// var builder = WebApplication.CreateBuilder(args);
-// var app = builder.Build();
-// 
-// app.MapGet("/", () => "Hello World!");
-// 
-// app.Run();
-
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+using SparkSwim.Core.Mapping;
 using SparkSwim.GoodsService;
-using SparkSwim.GoodsService.Common.Mapping;
 using SparkSwim.GoodsService.Interfaces;
+using SparkSwim.Core.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 RegisterServices(builder.Services);
@@ -51,6 +44,8 @@ void RegisterServices(IServiceCollection services)
     });
     services.AddApplication();
     services.AddControllers();
+
+    services.AddJwtAuth(builder.Configuration);
 }
 
 void Configure(IApplicationBuilder app)

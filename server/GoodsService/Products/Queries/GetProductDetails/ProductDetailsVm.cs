@@ -1,6 +1,5 @@
-using System.Runtime.InteropServices.ComTypes;
 using AutoMapper;
-using SparkSwim.GoodsService.Common.Mapping;
+using SparkSwim.Core.Mapping;
 using SparkSwim.GoodsService.Goods.Models;
 
 namespace SparkSwim.GoodsService.Products.Queries.GetProduct;

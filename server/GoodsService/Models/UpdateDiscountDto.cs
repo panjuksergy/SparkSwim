@@ -1,5 +1,5 @@
 using AutoMapper;
-using SparkSwim.GoodsService.Common.Mapping;
+using SparkSwim.Core.Mapping;
 using SparkSwim.GoodsService.Discounts.Commands.UpdateDiscount;
 
 namespace SparkSwim.GoodsService.Goods.Models;

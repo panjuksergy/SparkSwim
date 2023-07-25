@@ -1,6 +1,5 @@
 using AutoMapper;
-using SparkSwim.GoodsService.Common.Mapping;
-using SparkSwim.GoodsService.Goods.Commands.CreateGood;
+using SparkSwim.Core.Mapping;
 using SparkSwim.GoodsService.Products.Commands.UpdateProduct;
 
 namespace SparkSwim.GoodsService.Goods.Models;
