@@ -6,6 +6,7 @@ namespace SparkSwim.GoodsService.Goods.Models;
 
 public class UpdateDiscountDto : IMapWith<UpdateDiscountCommand>
 {
+    public Guid DiscountId { get; set; }
     public DateTime DateFrom { get; set; }
     public DateTime DateTo { get; set; }
     public decimal DiscountValue { get; set; }

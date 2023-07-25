@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using SparkSwim.GoodsService.Exceptions;
 using SparkSwim.GoodsService.Interfaces;
 
@@ -15,14 +16,14 @@ public class DeleteProductCommandHandler : IRequestHandler<DeleteDiscountCommand
 
     public async Task Handle(DeleteDiscountCommand request, CancellationToken cancellationToken)
     {
-        var discountToDelete = await _dbContext.Discount.FindAsync(request.DiscountId);
-
+        var discountToDelete = await _dbContext.Discount.Include(_ => _.Products).FirstOrDefaultAsync(_ => _.DiscountId == request.DiscountId);
+        
         if (discountToDelete == null || discountToDelete.DiscountId != request.DiscountId)
         {
             throw new NotFoundException(nameof(Discounts), request.DiscountId);
         }
-
         _dbContext.Discount.Remove(discountToDelete);
+        
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
 }

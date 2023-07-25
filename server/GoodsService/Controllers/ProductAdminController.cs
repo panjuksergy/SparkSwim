@@ -64,16 +64,16 @@ public class ProductAdminController : BaseController
         {
             DiscountId = Id
         };
-        await Mediator.Send(command);
-        return Ok();
+        var vm = await Mediator.Send(command);
+        return Ok(vm);
     }
 
     [HttpDelete("deleteDiscount/{Id}")]
     public async Task<ActionResult<DeleteDiscountCommand>> DeleteDiscount(Guid Id)
     {
-        var command = new DeleteProductCommand
+        var command = new DeleteDiscountCommand
         {
-            Id = Id
+            DiscountId = Id
         };
         await Mediator.Send(command);
         return Ok();
@@ -82,7 +82,7 @@ public class ProductAdminController : BaseController
     [HttpPost("createDiscount")]
     public async Task<ActionResult<CreateDiscountCommand>> CreateDiscount(
         [FromBody] CreateDiscountDto createDiscountDto)
-    {
+        {
         var command = _mapper.Map<CreateDiscountCommand>(createDiscountDto);
         var discountId = await Mediator.Send(command);
         return Ok(discountId);
@@ -92,9 +92,9 @@ public class ProductAdminController : BaseController
     public async Task<ActionResult<UpdateDiscountCommand>> UpdateDiscount(
         [FromBody] UpdateDiscountDto updateDiscountDto)
     {
-        var command = _mapper.Map<CreateDiscountCommand>(updateDiscountDto);
-        var discountId = await Mediator.Send(command);
-        return Ok(discountId);
+        var command = _mapper.Map<UpdateDiscountCommand>(updateDiscountDto);
+        await Mediator.Send(command);
+        return Ok();
     }
     
     #endregion

@@ -23,13 +23,12 @@ public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, P
     {
         /// If request filters is null, it will be ignored on filtering
 
-        IQueryable<Product> productsQuery = _productDbContext.Products.AsQueryable();
 
-        productsQuery = productsQuery
+        var productsQuery = _productDbContext.Products
             .Where(p => (request.PriceFrom == null || p.Price >= request.PriceFrom)
                         && (request.PriceTo == null || p.Price <= request.PriceTo)
                         && (request.ProductType == null || p.ProductType == request.ProductType));
-
+        
         var products = await productsQuery
             .Skip(request.NumberFromToSkip)
             .Take(request.CountToGet)

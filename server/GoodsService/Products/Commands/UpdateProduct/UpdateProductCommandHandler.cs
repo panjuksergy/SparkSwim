@@ -25,8 +25,8 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand>
         existProduct.Description = request.Description;
         existProduct.CreationDate = DateTime.Now;
         existProduct.Price = request.Price;
-        existProduct.ProductType = request.ProductType;
-        existProduct.ProductImages = request.ProductImages;
+        existProduct.ProductTypeId = request.ProductTypeId;
+        // existProduct.ProductImages = request.ProductImages;
 
         await _dbContext.SaveChangesAsync(cancellationToken);
     }
