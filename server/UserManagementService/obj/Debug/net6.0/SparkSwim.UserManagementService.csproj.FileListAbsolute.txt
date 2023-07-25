@@ -69,3 +69,4 @@ E:\SparkSwim\server\UserManagementService\obj\Debug\net6.0\SparkSwim.UserManagem
 E:\SparkSwim\server\UserManagementService\obj\Debug\net6.0\ref\SparkSwim.UserManagementService.dll
 E:\SparkSwim\server\UserManagementService\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 E:\SparkSwim\server\UserManagementService\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\SparkSwim\server\UserManagementService\bin\Debug\net6.0\AutoMapper.dll
