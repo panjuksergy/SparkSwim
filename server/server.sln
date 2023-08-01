@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F01BFB1F-A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparkSwim.Core", "SparkSwim.Core\SparkSwim.Core.csproj", "{AAED8960-63D2-4818-A91F-67439EED0F1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparkSwim.GWApi", "SparkSwim.GWApi\SparkSwim.GWApi.csproj", "{CBA7D10E-9DD5-4FAD-BE02-973DD7150FA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{AAED8960-63D2-4818-A91F-67439EED0F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAED8960-63D2-4818-A91F-67439EED0F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAED8960-63D2-4818-A91F-67439EED0F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA7D10E-9DD5-4FAD-BE02-973DD7150FA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA7D10E-9DD5-4FAD-BE02-973DD7150FA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA7D10E-9DD5-4FAD-BE02-973DD7150FA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA7D10E-9DD5-4FAD-BE02-973DD7150FA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
