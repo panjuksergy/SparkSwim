@@ -134,7 +134,8 @@ namespace SparkSwim.GoodsService.Migrations
                 {
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.Discount", "Discount")
                         .WithMany("Products")
-                        .HasForeignKey("DiscountId");
+                        .HasForeignKey("DiscountId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.ProductType", "ProductType")
                         .WithMany("Products")

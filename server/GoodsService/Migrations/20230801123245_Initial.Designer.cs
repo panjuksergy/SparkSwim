@@ -12,8 +12,8 @@ using SparkSwim.GoodsService;
 namespace SparkSwim.GoodsService.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20230723205924_microUpdateForDiscount1.1")]
-    partial class microUpdateForDiscount11
+    [Migration("20230801123245_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,6 +68,7 @@ namespace SparkSwim.GoodsService.Migrations
             modelBuilder.Entity("SparkSwim.GoodsService.Goods.Models.Product", b =>
                 {
                     b.Property<Guid>("ProductId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreationDate")
@@ -77,6 +78,9 @@ namespace SparkSwim.GoodsService.Migrations
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
+
+                    b.Property<Guid?>("DiscountId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -93,6 +97,8 @@ namespace SparkSwim.GoodsService.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ProductId");
+
+                    b.HasIndex("DiscountId");
 
                     b.HasIndex("ProductTypeId");
 
@@ -131,9 +137,8 @@ namespace SparkSwim.GoodsService.Migrations
                 {
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.Discount", "Discount")
                         .WithMany("Products")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DiscountId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("SparkSwim.GoodsService.Goods.Models.ProductType", "ProductType")
                         .WithMany("Products")
