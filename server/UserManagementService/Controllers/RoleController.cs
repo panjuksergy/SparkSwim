@@ -6,7 +6,6 @@ using System.Data;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("api/[controller]")]
     [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
     public class RoleController : BaseController
     {

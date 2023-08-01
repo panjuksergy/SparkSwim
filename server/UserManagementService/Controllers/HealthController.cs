@@ -5,7 +5,6 @@ using SparkSwim.UserManagementService.Controllers.Base;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("identity")]
     public class HealthController : BaseController
     {
         [HttpGet]

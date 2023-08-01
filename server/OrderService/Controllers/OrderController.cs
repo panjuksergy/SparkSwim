@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SparkSwim.OrderService.Controllers.Base;
 using SparkSwim.OrderService.Models.Dto;
 using SparkSwim.OrderService.Orders.Commands.CreateOrder;
-using SparkSwim.OrderService.Orders.Commands.DeleteOrder;
-using SparkSwim.OrderService.Orders.Commands.UpdateOrder;
 using SparkSwim.OrderService.Orders.Queries.GetOrderDetails;
 using SparkSwim.OrderService.Orders.Queries.GetOrdersList;
 
@@ -46,26 +44,6 @@ namespace SparkSwim.OrderService.Controllers
             command.UserId = UserId;
             var orderId = await Mediator.Send(command);
             return Ok(orderId);
-        }
-
-        [HttpPut("update")]
-        public async Task<ActionResult> Update([FromBody] UpdateOrderDto updateOrderDto)
-        {
-            var command = _mapper.Map<UpdateOrderCommand>(updateOrderDto);
-            await Mediator.Send(command);
-            return NoContent();
-        }
-
-        [HttpPut("cancel/{id}")]
-        public async Task<ActionResult> Cancel(Guid id)
-        {
-            var command = new CancelOrderCommand()
-            {
-                OrderId = id,
-                UserId = UserId
-            };
-            await Mediator.Send(command);
-            return NoContent();
         }
     }
 }

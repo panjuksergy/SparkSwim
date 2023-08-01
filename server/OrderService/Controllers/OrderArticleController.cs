@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SparkSwim.OrderService.Controllers.Base;
 using SparkSwim.OrderService.Models.Dto;
 using SparkSwim.OrderService.OrderArticles.Commands.CreateOrderArticle;
-using SparkSwim.OrderService.OrderArticles.Commands.UpdateOrderArticle;
 using SparkSwim.OrderService.OrderArticles.Queries.GetOrderArticleDetails;
 
 namespace SparkSwim.OrderService.Controllers
@@ -38,15 +38,6 @@ namespace SparkSwim.OrderService.Controllers
             var command = _mapper.Map<CreateOrderArticleCommand>(createOrderArticleDto);
             var orderId = await Mediator.Send(command);
             return Ok(orderId);
-        }
-
-        [HttpPut("update")]
-        public async Task<ActionResult> 
-            Update([FromBody] UpdateOrderArticleDto updateOrderArticleDto)
-        {
-            var command = _mapper.Map<UpdateOrderArticleCommand>(updateOrderArticleDto);
-            await Mediator.Send(command);
-            return NoContent();
         }
     }
 }

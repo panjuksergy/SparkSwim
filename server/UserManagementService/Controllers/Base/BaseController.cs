@@ -5,6 +5,7 @@ using System.Security.Claims;
 namespace SparkSwim.UserManagementService.Controllers.Base
 {
     [ApiController]
+    [Route("api/[controller]")]
     public class BaseController : ControllerBase
     {
         public Guid UserId => !User.Identity.IsAuthenticated
