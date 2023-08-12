@@ -16,7 +16,7 @@ namespace SparkSwim.UserManagementService.Controllers
             _roleManager = roleManager;
         }
 
-        [HttpPost("add")]
+        [HttpPost("add/{roleName}")]
         public async Task<IdentityResult> Add(string roleName) 
         {
             var result = await _roleManager.CreateAsync(new IdentityRole(roleName));

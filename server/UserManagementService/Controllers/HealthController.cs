@@ -8,10 +8,9 @@ namespace SparkSwim.UserManagementService.Controllers
     public class HealthController : BaseController
     {
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> Get()
         {
-            return Ok($"{UserId}");
+            return Ok("ItsWorking");
         }
 
         [HttpGet("admincheck")]

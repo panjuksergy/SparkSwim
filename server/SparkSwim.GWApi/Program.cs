@@ -16,7 +16,7 @@ app.Run();
 void RegisterServices(IServiceCollection services)
 {
     services.AddOcelot(builder.Configuration);
-    services.AddControllers();
+    services.AddControllers();  
 }
 
 async void Configure(IApplicationBuilder app)
@@ -24,7 +24,8 @@ async void Configure(IApplicationBuilder app)
     app.UseRouting();
     app.UseHttpsRedirection();
     app.UseCors("AllowAll");
-
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.UseEndpoints(endpoints =>
     {
         endpoints.MapGet("/", async context => { await context.Response.WriteAsync("API Gateway started"); });

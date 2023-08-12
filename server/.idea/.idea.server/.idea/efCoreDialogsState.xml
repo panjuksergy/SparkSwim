@@ -3,8 +3,10 @@
   <component name="EfCoreDialogsState">
     <option name="keyValueStorage">
       <map>
+        <entry key="Common:10653444-ee16-45c4-a155-6e9955a5a5ee:dbContext" value="SparkSwim.OrderService.Data.OrdersDbContext" />
         <entry key="Common:3655f035-9172-415b-8d0b-69a64215f275:dbContext" value="SparkSwim.GoodsService.ProductDbContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
+        <entry key="Common:de1fdd2b-ee9d-4cc7-a34f-743b034901ab:dbContext" value="SparkSwim.Core.Data.UsersDbContext" />
         <entry key="Common:noBuild" value="true" />
         <entry key="Common:outputFolder" value="Migrations" />
         <entry key="Common:useDefaultConnection" value="true" />

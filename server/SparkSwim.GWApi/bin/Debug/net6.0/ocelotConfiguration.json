@@ -1,7 +1,85 @@
 {
-  "ReRoutes": [
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5010"
+  },
+  "Routes": [
     {
-      "DownstreamPathTemplate": "/api/ProductAdminController/{everything}",
+      "DownstreamPathTemplate": "/api/health/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/health",
+      "UpstreamHttpMethod": ["POST", "PUT", "GET"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/role/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/role/{everything}",
+      "UpstreamHttpMethod": ["Post", "Get"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/useradmin/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/useradmin/{everything}",
+      "UpstreamHttpMethod": ["Post", "Get"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/useranonymous/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/useranonymous/{everything}",
+      "UpstreamHttpMethod": ["Post"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/user/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5004
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/user/{everything}",
+      "UpstreamHttpMethod": ["Post", "Get"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/productadmin/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,11 +87,14 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/ProductAdmin/{everything}",
-      "UpstreamHttpMethod": [ "POST", "GET", "DELETE" ]
+      "UpstreamPathTemplate": "/gateway/productadmin/{everything}",
+      "UpstreamHttpMethod": ["Post", "Get", "Delete"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     },
     {
-      "DownstreamPathTemplate": "/api/ProductController/{everything}",
+      "DownstreamPathTemplate": "/api/product/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -21,35 +102,14 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/Products/{everything}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/product/{everything}",
+      "UpstreamHttpMethod": ["Get"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     },
     {
-      "DownstreamPathTemplate": "/api/OrderArticleController/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5002
-        }
-      ],
-      "UpstreamPathTemplate": "/OrderArticle/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/OrderController/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5002
-        }
-      ],
-      "UpstreamPathTemplate": "/Order/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
-    },
-    {
-      "DownstreamPathTemplate": "/IdentityController/login",
+      "DownstreamPathTemplate": "/api/identity/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -57,61 +117,75 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/Identity/Login",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/identity/{everything}",
+      "UpstreamHttpMethod": ["Get", "Post"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     },
     {
-      "DownstreamPathTemplate": "/api/RoleController/{everything}",
+      "DownstreamPathTemplate": "/api/orderadmin/{everything}",
       "DownstreamScheme": "http",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": ["Admin"]
-      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5004
+          "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/Role/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST" ]
+      "UpstreamPathTemplate": "/gateway/orderadmin/{everything}",
+      "UpstreamHttpMethod": ["Put", "Get", "Delete"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     },
     {
-      "DownstreamPathTemplate": "/api/UserController/{everything}",
+      "DownstreamPathTemplate": "/api/orderarticleadmin/{everything}",
       "DownstreamScheme": "http",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": ["Admin"]
-      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5004
+          "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/User/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamPathTemplate": "/gateway/orderarticleadmin/{everything}",
+      "UpstreamHttpMethod": ["Put"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     },
     {
-      "DownstreamPathTemplate": "/identity/{everything}",
+      "DownstreamPathTemplate": "/api/orderarticle/{everything}",
       "DownstreamScheme": "http",
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 5004
+          "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/Identity/{everything}",
-      "UpstreamHttpMethod": [ "GET" ]
+      "UpstreamPathTemplate": "/gateway/orderarticle/{everything}",
+      "UpstreamHttpMethod": ["Get", "Post"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/order/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/order/{everything}",
+      "UpstreamHttpMethod": ["Get", "Post"],
+      "HttpClientHandler": {
+        "DangerousAcceptAnyServerCertificateValidator": true
+      }
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:5200",
-    "RequestIdKey": "OcRequestId",
-    "AdministrationPath": "/administration"
-  }
+  ]
 }
+
+
+
+
