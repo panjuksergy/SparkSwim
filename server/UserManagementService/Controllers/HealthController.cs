@@ -5,14 +5,12 @@ using SparkSwim.UserManagementService.Controllers.Base;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("identity")]
     public class HealthController : BaseController
     {
         [HttpGet]
-        [Authorize]
         public async Task<IActionResult> Get()
         {
-            return Ok($"{UserId}");
+            return Ok("ItsWorking");
         }
 
         [HttpGet("admincheck")]

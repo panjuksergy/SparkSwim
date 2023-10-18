@@ -8,7 +8,6 @@ using SparkSwim.UserManagementService.Models;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("api/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class UserController : BaseController
     {
@@ -17,21 +16,6 @@ namespace SparkSwim.UserManagementService.Controllers
         public UserController(UserManager<AppUser> userManager)
         {
             _userManager = userManager;
-        }
-
-        [HttpPost("register")]
-        [AllowAnonymous]
-        public async Task<IdentityResult> Register(RegisterUserDto registerUserModel)
-        {
-            var appUser = new AppUser()
-            {
-                UserName = registerUserModel.UserName,
-                Email = registerUserModel.Email,
-                FirstName = registerUserModel.FirstName,
-                LastName = registerUserModel.LastName
-            };
-            var result = await _userManager.CreateAsync(appUser, registerUserModel.Password);
-            return result;
         }
 
         [HttpPost("update")]
@@ -56,59 +40,6 @@ namespace SparkSwim.UserManagementService.Controllers
                 (user, changePasswordModel.CurrentPassword, changePasswordModel.NewPassword);
 
             return result;
-        }
-
-        [HttpPost("remove")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IdentityResult> RemoveByUserName(string userName)
-        {
-            var userToBeDeleted = await _userManager.FindByNameAsync(userName);
-            var result = await _userManager.DeleteAsync(userToBeDeleted);
-
-            return result;
-        }
-
-        [HttpPost("addrole")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IdentityResult> AddRole(AddRoleToUserDto addRoleToUser)
-        {
-            var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
-            if (user == null)
-            {
-                return IdentityResult.Failed(new IdentityError() { Description = $"User {addRoleToUser.UserName} was not found." });
-            }
-            var result = await _userManager.AddToRoleAsync(user, addRoleToUser.RoleName);
-
-            return result;
-        }
-
-        [HttpPost("removerole")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IdentityResult> RemoveRole(AddRoleToUserDto addRoleToUser)
-        {
-            var user = await _userManager.FindByNameAsync(addRoleToUser.UserName);
-            if (user == null)
-            {
-                return IdentityResult.Failed(new IdentityError() { Description = $"User {addRoleToUser.UserName} was not found." });
-            }
-            var result = await _userManager.RemoveFromRoleAsync(user, addRoleToUser.RoleName);
-
-            return result;
-        }
-        
-        [HttpGet("all")]
-        [Authorize(Roles = "Admin")]
-        public async Task<IEnumerable<AppUser>> GetAll()
-        {
-            var result = _userManager.Users.AsEnumerable();
-            return result;
-        }
-
-        [HttpGet("get")]
-        public async Task<AppUser> GetByName(string userName)
-        {
-            var user = await _userManager.FindByNameAsync(userName);
-            return user;
         }
     }
 }

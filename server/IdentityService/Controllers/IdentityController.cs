@@ -7,7 +7,7 @@ using SparkSwim.IdentityService.Models;
 namespace SparkSwim.IdentityService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class IdentityController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

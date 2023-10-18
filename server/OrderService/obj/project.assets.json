@@ -2379,36 +2379,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nimbus-2001\\.nuget\\packages\\": {}
+    "/home/elainezirael/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SparkSwim\\server\\OrderService\\SparkSwim.OrderService.csproj",
+      "projectUniqueName": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/OrderService/SparkSwim.OrderService.csproj",
       "projectName": "SparkSwim.OrderService",
-      "projectPath": "E:\\SparkSwim\\server\\OrderService\\SparkSwim.OrderService.csproj",
-      "packagesPath": "C:\\Users\\Nimbus-2001\\.nuget\\packages\\",
-      "outputPath": "E:\\SparkSwim\\server\\OrderService\\obj\\",
+      "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/OrderService/SparkSwim.OrderService.csproj",
+      "packagesPath": "/home/elainezirael/.nuget/packages/",
+      "outputPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/OrderService/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nimbus-2001\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/elainezirael/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
-        "C:\\Users\\Nimbus-2001\\.nuget\\packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj": {
-              "projectPath": "E:\\SparkSwim\\server\\SparkSwim.Core\\SparkSwim.Core.csproj"
+            "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj": {
+              "projectPath": "/home/elainezirael/SparkSwimREPO/SparkSwimTest/SparkSwim/server/SparkSwim.Core/SparkSwim.Core.csproj"
             }
           }
         }
@@ -2462,8 +2458,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -2475,7 +2470,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/6.0.118/RuntimeIdentifierGraph.json"
       }
     }
   }

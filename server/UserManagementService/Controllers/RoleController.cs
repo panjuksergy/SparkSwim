@@ -6,7 +6,6 @@ using System.Data;
 
 namespace SparkSwim.UserManagementService.Controllers
 {
-    [Route("api/[controller]")]
     [Authorize(Roles = "Admin", AuthenticationSchemes = "Bearer")]
     public class RoleController : BaseController
     {
@@ -17,7 +16,7 @@ namespace SparkSwim.UserManagementService.Controllers
             _roleManager = roleManager;
         }
 
-        [HttpPost("add")]
+        [HttpPost("add/{roleName}")]
         public async Task<IdentityResult> Add(string roleName) 
         {
             var result = await _roleManager.CreateAsync(new IdentityRole(roleName));
